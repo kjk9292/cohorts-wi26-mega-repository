@@ -1,0 +1,494 @@
+/* =============================================
+   CSS VARIABLES
+   ============================================= */
+:root {
+  --color-primary: #6366f1;
+  --color-primary-dark: #4f46e5;
+  --color-primary-light: #e0e7ff;
+
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-text: #1e293b;
+  --color-text-muted: #64748b;
+  --color-border: #e2e8f0;
+
+  --color-success: #22c55e;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 12px;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);
+
+  --sidebar-width: 240px;
+  --header-height: 64px;
+}
+
+
+/* =============================================
+   BASE STYLES / RESET
+   ============================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+}
+
+ul {
+  list-style: none;
+}
+
+
+/* =============================================
+   HEADER (Issue #1)
+   ============================================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-height);
+  padding: 0 24px;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.add-btn {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+}
+
+.add-btn:hover {
+  background-color: var(--color-primary-dark);
+}
+
+
+/* =============================================
+   APP LAYOUT
+   ============================================= */
+.app-container {
+  display: flex;
+  min-height: calc(100vh - var(--header-height) - 53px);
+}
+
+
+/* =============================================
+   SIDEBAR (Issue #4)
+   ============================================= */
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  padding: 24px 0;
+  flex-shrink: 0;
+}
+
+.sidebar h2 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  padding: 0 20px;
+  margin-bottom: 12px;
+}
+
+.sidebar nav ul li a {
+  display: block;
+  padding: 10px 20px;
+  color: var(--color-text);
+  font-size: 0.9375rem;
+  transition: background-color 0.15s;
+}
+
+.sidebar nav ul li a:hover {
+  background-color: var(--color-bg);
+  text-decoration: none;
+}
+
+.sidebar nav ul li a.active {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-weight: 500;
+}
+
+
+/* =============================================
+   MAIN CONTENT
+   ============================================= */
+.main-content {
+  flex: 1;
+  padding: 24px;
+  max-width: 1200px;
+  min-width: 0;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--color-text);
+}
+
+
+/* =============================================
+   ADD BOOKMARK FORM (Issue #2)
+   ============================================= */
+.add-bookmark-section {
+  margin-bottom: 32px;
+}
+
+.add-bookmark-form {
+  background-color: var(--color-surface);
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.form-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--color-text);
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.form-group {
+  flex: 1;
+  margin-bottom: 16px;
+}
+
+.form-row .form-group {
+  margin-bottom: 0;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--color-text);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.form-submit-btn {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 10px 24px;
+  border-radius: var(--radius);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+  height: 42px;
+}
+
+.form-submit-btn:hover {
+  background-color: var(--color-primary-dark);
+}
+
+
+/* =============================================
+   BOOKMARK GRID (Issue #5)
+   ============================================= */
+.bookmark-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+
+/* =============================================
+   BOOKMARK CARD (Issue #3)
+   ============================================= */
+.bookmark-card {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.bookmark-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.bookmark-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius);
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.bookmark-icon.icon-red {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.bookmark-icon.icon-blue {
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+
+.bookmark-icon.icon-green {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.bookmark-icon.icon-orange {
+  background-color: #ffedd5;
+  color: #ea580c;
+}
+
+.bookmark-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.bookmark-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.bookmark-title a {
+  color: var(--color-text);
+}
+
+.bookmark-title a:hover {
+  color: var(--color-primary);
+}
+
+.bookmark-url {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bookmark-description {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+.bookmark-category {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  border-radius: 9999px;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
+
+.category-work {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.category-personal {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.category-learning {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.category-entertainment {
+  background-color: #fce7f3;
+  color: #be185d;
+}
+
+.bookmark-delete {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 1.25rem;
+  border-radius: var(--radius-sm);
+  opacity: 0;
+  transition: opacity 0.15s, color 0.15s, background-color 0.15s;
+}
+
+.bookmark-card:hover .bookmark-delete {
+  opacity: 1;
+}
+
+.bookmark-delete:hover {
+  background-color: #fee2e2;
+  color: var(--color-danger);
+}
+
+
+/* =============================================
+   FOOTER
+   ============================================= */
+.footer {
+  text-align: center;
+  padding: 16px;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+}
+
+
+/* =============================================
+   RESPONSIVE DESIGN (Issue #6 - Bonus)
+   ============================================= */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .bookmark-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    padding: 16px;
+  }
+
+  .header {
+    padding: 0 16px;
+  }
+
+  .add-bookmark-form {
+    padding: 16px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .form-row .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-submit-btn {
+    width: 100%;
+  }
+
+  .bookmark-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bookmark-delete {
+    opacity: 1;
+  }
+}

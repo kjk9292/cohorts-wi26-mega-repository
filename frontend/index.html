@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookmark Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============================================
+       ISSUE #1: Build the Header
+
+       Create a header with:
+       - Logo/app name on the left
+       - Navigation links (optional)
+       - "Add Bookmark" button on the right
+
+       Use flexbox for layout!
+       ============================================ -->
+  <header class="header">
+    <!-- TODO: Add header content -->
+  </header>
+
+
+  <div class="app-container">
+
+    <!-- ============================================
+         ISSUE #4: Build the Sidebar
+
+         Create a sidebar with:
+         - "Categories" heading
+         - List of category links:
+           - All Bookmarks
+           - Work
+           - Personal
+           - Learning
+           - Entertainment
+         - Each item should be clickable (use <a> or <button>)
+         - "All Bookmarks" should look selected/active
+
+         Hint: Use a <nav> with a <ul> inside
+         ============================================ -->
+    <aside class="sidebar">
+      <!-- TODO: Add sidebar content -->
+    </aside>
+
+
+    <main class="main-content">
+
+      <!-- ============================================
+           ISSUE #2: Build the Add Bookmark Form
+
+           Create a form with:
+           - URL input (required)
+           - Title input (required)
+           - Description textarea (optional)
+           - Category dropdown/select
+           - Submit button
+
+           The form should be collapsible or in a card.
+           Don't worry about functionality - just the HTML/CSS!
+           ============================================ -->
+      <section class="add-bookmark-section">
+        <!-- TODO: Add bookmark form -->
+      </section>
+
+
+      <!-- ============================================
+           ISSUE #3: Build the Bookmark Card
+           ISSUE #5: Create the Main Layout (card grid)
+
+           Create bookmark cards that show:
+           - Favicon or placeholder icon
+           - Title (as a link)
+           - URL (truncated if too long)
+           - Description (2-3 lines max)
+           - Category tag/badge
+           - Delete button (icon or text)
+
+           Create 4-6 hardcoded example cards.
+           Use CSS Grid for the card layout!
+           ============================================ -->
+      <section class="bookmarks-section">
+        <h2 class="section-title">All Bookmarks</h2>
+
+        <div class="bookmark-grid">
+          <!-- TODO: Add bookmark cards -->
+
+          <!-- Example structure for ONE card (to guide you):
+
+          <article class="bookmark-card">
+            <div class="bookmark-icon">
+              [favicon or placeholder]
+            </div>
+            <div class="bookmark-content">
+              <h3 class="bookmark-title">
+                <a href="#">Website Title</a>
+              </h3>
+              <p class="bookmark-url">https://example.com/path...</p>
+              <p class="bookmark-description">
+                A brief description of what this bookmark is about.
+              </p>
+              <span class="bookmark-category">Work</span>
+            </div>
+            <button class="bookmark-delete">Delete</button>
+          </article>
+
+          -->
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+
+  <footer class="footer">
+    <p>Built with learning by CSES Cohorts</p>
+  </footer>
+
+</body>
+</html>

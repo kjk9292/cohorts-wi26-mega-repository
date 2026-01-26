@@ -4,11 +4,10 @@ This week we're building the static UI for our bookmark manager. No JavaScript y
 
 ## Learning Objectives
 
-- Semantic HTML5 elements
-- CSS Flexbox and Grid layouts
-- CSS custom properties (variables)
-- Component-based thinking (even without JS)
-- Responsive design basics
+- Semantic HTML5 elements (`<header>`, `<main>`, `<aside>`, `<footer>`, `<nav>`, `<article>`)
+- CSS Flexbox for layouts
+- Basic styling (colors, spacing, borders)
+- Working with forms and inputs
 
 ## The Design
 
@@ -16,16 +15,18 @@ We're building a bookmark manager with these sections:
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│  Header (Logo + Nav)                                │
+│  Header (Logo + Button)                             │
 ├─────────────────────────────────────────────────────┤
 │           │                                         │
 │  Sidebar  │   Main Content Area                     │
-│           │   ┌─────────┐ ┌─────────┐ ┌─────────┐   │
-│  - All    │   │ Card 1  │ │ Card 2  │ │ Card 3  │   │
-│  - Work   │   └─────────┘ └─────────┘ └─────────┘   │
-│  - Personal│   ┌─────────┐ ┌─────────┐              │
-│  - Learning│   │ Card 4  │ │ Card 5  │              │
-│           │   └─────────┘ └─────────┘              │
+│           │   ┌─────────────────────────────────┐   │
+│  - All    │   │        Add Bookmark Form        │   │
+│  - Work   │   └─────────────────────────────────┘   │
+│  - Personal│                                        │
+│  - Learning│   ┌─────────┐ ┌─────────┐ ┌─────────┐  │
+│  - Enter- │   │ Card 1  │ │ Card 2  │ │ Card 3  │  │
+│    tainment│   └─────────┘ └─────────┘ └─────────┘  │
+│           │                                         │
 ├─────────────────────────────────────────────────────┤
 │  Footer                                             │
 └─────────────────────────────────────────────────────┘
@@ -40,98 +41,66 @@ We're building a bookmark manager with these sections:
 
 ## This Week's Issues
 
-Each pair should claim ONE issue. Work together!
+Each pair should claim ONE issue. **All issues can be worked on in parallel!**
 
 | Issue | Description | Difficulty |
 |-------|-------------|------------|
 | #1 | Build the Header | Easy |
-| #2 | Build the Add Bookmark Form | Medium |
-| #3 | Build the Bookmark Card | Medium |
+| #2 | Build the Add Bookmark Form | Easy |
+| #3 | Build the Bookmark Cards | Medium |
 | #4 | Build the Sidebar | Easy |
-| #5 | Create the Main Layout | Medium |
-| #6 | Add Responsive Design | Hard (Bonus) |
+| #5 | Build the Footer | Easy |
 
 ## File Structure
 
 ```
 frontend/
-├── index.html      # Main HTML file
-├── styles.css      # All styles
-└── assets/         # Images, icons (if needed)
+├── index.html      # Main HTML file (layout is pre-built)
+├── styles.css      # Styles (layout is pre-built, add your component styles)
+└── examples/       # Working examples for each issue
+    ├── issue-1-header/
+    ├── issue-2-form/
+    ├── issue-3-card/
+    ├── issue-4-sidebar/
+    ├── issue-5-footer/
+    └── full-solution/
 ```
 
-## HTML Structure Overview
+## How to Work on Your Issue
 
-The `index.html` has placeholder sections. Your job is to fill them in based on your issue.
-
-```html
-<body>
-  <header class="header">         <!-- Issue #1 -->
-    <!-- Logo, nav, add button -->
-  </header>
-
-  <div class="app-container">
-    <aside class="sidebar">       <!-- Issue #4 -->
-      <!-- Category list -->
-    </aside>
-
-    <main class="main-content">   <!-- Issue #5 -->
-      <!-- Add form (#2) + Bookmark grid (#3) -->
-    </main>
-  </div>
-
-  <footer class="footer">
-    <!-- Footer content -->
-  </footer>
-</body>
-```
-
-## CSS Variables
-
-We've set up CSS variables in `styles.css`. Use these for consistency:
-
-```css
-:root {
-  --color-primary: #6366f1;     /* Indigo - buttons, accents */
-  --color-primary-dark: #4f46e5;
-  --color-bg: #f8fafc;          /* Light gray background */
-  --color-surface: #ffffff;      /* Card backgrounds */
-  --color-text: #1e293b;         /* Dark text */
-  --color-text-muted: #64748b;   /* Secondary text */
-  --color-border: #e2e8f0;       /* Borders */
-  --radius: 8px;                 /* Border radius */
-  --shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-```
+1. **Find your section** in `index.html` - look for the comment with your issue number
+2. **Replace the placeholder** with your HTML code
+3. **Add your styles** in `styles.css` under the section for your issue
+4. **Check the example** in `frontend/examples/issue-X/` to see what it should look like
+5. **Use the hints** in `docs/hints/week1/issue-X.md` if you get stuck
 
 ## Tips
 
 - **Use semantic HTML**: `<header>`, `<main>`, `<aside>`, `<footer>`, `<nav>`, `<article>`
-- **Use Flexbox**: Great for navbars, card layouts, centering
-- **Use Grid**: Great for the bookmark card grid
-- **Mobile-first**: Start with mobile layout, add media queries for larger screens
+- **Use Flexbox**: Great for putting things side-by-side (`display: flex`)
+- **Check the examples**: Open them in your browser to see the goal
+- **Start simple**: Get the HTML structure right first, then add styling
 
 ## Resources
 
 - [CSS Flexbox Guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-- [CSS Grid Guide](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - [HTML5 Semantic Elements](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantic_elements)
+- [MDN HTML Forms](https://developer.mozilla.org/en-US/docs/Learn/Forms)
 
 ## Acceptance Criteria
 
 By the end of Week 1, the app should:
 
-- [ ] Have a header with logo and navigation
-- [ ] Have a sidebar with category list
+- [ ] Have a header with app name and "Add Bookmark" button
+- [ ] Have a sidebar with category links
 - [ ] Display a form to add new bookmarks
-- [ ] Show bookmark cards in a grid layout
-- [ ] Look good on both mobile and desktop
-- [ ] Use consistent colors and spacing from CSS variables
+- [ ] Show bookmark cards with title, URL, and category
+- [ ] Have a footer at the bottom
 
 ## Next Week Preview
 
 In Week 2, we'll add JavaScript to:
 - Make the "Add Bookmark" form actually work
 - Store bookmarks in localStorage
-- Delete and edit bookmarks
+- Delete bookmarks
 - Filter by category

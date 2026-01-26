@@ -138,7 +138,7 @@ Create a simple footer at the bottom of the page.
 - [ ] Footer is visually distinct from the rest of the page
 
 ### Where to Work
-- **HTML:** Add a `<footer>` element after the closing `</div>` of `app-container` in `index.html`
+- **HTML:** Replace the placeholder in `<footer class="footer">` in `index.html`
 - **CSS:** Add styles under "ISSUE #5: FOOTER" in `styles.css`
 
 **Stuck?** Try the hints in `docs/hints/week1/issue-5-footer.md` - start with Hint 1!

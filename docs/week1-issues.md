@@ -1,6 +1,6 @@
 # Week 1 Issues
 
-Copy these to GitHub Issues. Each pair claims one issue.
+Copy these to GitHub Issues. Each pair claims one issue. **All issues can be worked on in parallel!**
 
 ---
 
@@ -9,20 +9,21 @@ Copy these to GitHub Issues. Each pair claims one issue.
 **Labels:** `week-1`, `html`, `css`, `difficulty:easy`
 
 ### Description
-Create the header/navbar for the bookmark manager.
+Create a simple header with the app name and a button.
 
 ### Requirements
-- [ ] Logo or app name on the left ("Bookmark Manager" or an icon)
+- [ ] App name "Bookmark Manager" on the left
 - [ ] "Add Bookmark" button on the right
-- [ ] Fixed height (use `--header-height` variable)
-- [ ] White background with subtle bottom border
-- [ ] Use flexbox for layout
+- [ ] White background
 
 ### Acceptance Criteria
 - [ ] Header spans full width
-- [ ] Logo on left, button on right
-- [ ] Button has hover effect (darker shade)
-- [ ] Looks clean and professional
+- [ ] Name on left, button on right
+- [ ] Button is styled (background color, white text)
+
+### Where to Work
+- **HTML:** Replace the placeholder in `<header class="header">` in `index.html`
+- **CSS:** Add styles under "ISSUE #1: HEADER" in `styles.css`
 
 **Stuck?** Try the hints in `docs/hints/week1/issue-1-header.md` - start with Hint 1!
 
@@ -32,24 +33,26 @@ Create the header/navbar for the bookmark manager.
 
 ## Issue #2: Build the Add Bookmark Form
 
-**Labels:** `week-1`, `html`, `css`, `difficulty:medium`
+**Labels:** `week-1`, `html`, `css`, `difficulty:easy`
 
 ### Description
 Create a form for adding new bookmarks. The form won't work yet (that's Week 2) - just build the HTML and CSS.
 
 ### Requirements
-- [ ] URL input field (required)
-- [ ] Title input field (required)
-- [ ] Description textarea (optional)
-- [ ] Category dropdown with options: Work, Personal, Learning, Entertainment
+- [ ] URL input field
+- [ ] Title input field
+- [ ] Category dropdown (Work, Personal, Learning, Entertainment)
 - [ ] Submit button
-- [ ] Form is inside a card-like container
 
 ### Acceptance Criteria
-- [ ] All form fields are present and labeled
-- [ ] Inputs have proper focus states
-- [ ] Form looks like a card (shadow, rounded corners)
-- [ ] Submit button matches the app's style
+- [ ] All form fields have labels
+- [ ] Form has a background color to stand out from the page
+- [ ] Inputs are full width
+- [ ] Submit button is styled
+
+### Where to Work
+- **HTML:** Replace the placeholder in `<section class="form-section">` in `index.html`
+- **CSS:** Add styles under "ISSUE #2: FORM" in `styles.css`
 
 **Stuck?** Try the hints in `docs/hints/week1/issue-2-form.md` - start with Hint 1!
 
@@ -57,36 +60,32 @@ Create a form for adding new bookmarks. The form won't work yet (that's Week 2) 
 
 ---
 
-## Issue #3: Build the Bookmark Card
+## Issue #3: Build the Bookmark Cards
 
 **Labels:** `week-1`, `html`, `css`, `difficulty:medium`
 
 ### Description
-Create the bookmark card component. Build 4-6 example cards with hardcoded data.
+Create bookmark cards to display saved bookmarks. Make 3 example cards with fake data.
 
 ### Requirements
-- [ ] Favicon/icon placeholder (can be a colored div or emoji for now)
-- [ ] Title as a clickable link
-- [ ] URL (truncated if too long)
-- [ ] Description (max 2 lines)
-- [ ] Category badge
-- [ ] Delete button
+- [ ] Title (as a link)
+- [ ] URL text
+- [ ] Category label
+- [ ] Card has a border or shadow to look like a card
 
 ### Example Bookmarks to Create
 1. GitHub - Work
 2. YouTube - Entertainment
 3. MDN Web Docs - Learning
-4. Gmail - Personal
-5. Stack Overflow - Learning
-6. Netflix - Entertainment
 
 ### Acceptance Criteria
-- [ ] Cards display all required information
-- [ ] Long URLs are truncated with ellipsis
-- [ ] Description is limited to 2 lines
-- [ ] Category badge is styled as a pill/tag
-- [ ] Delete button is subtle but visible on hover
-- [ ] Cards have hover effect (slight lift/shadow)
+- [ ] Each card shows title, URL, and category
+- [ ] Title links open in a new tab
+- [ ] Cards are visually distinct (border, background, or shadow)
+
+### Where to Work
+- **HTML:** Replace the placeholder in `<div class="cards-container">` in `index.html`
+- **CSS:** Add styles under "ISSUE #3: BOOKMARK CARDS" in `styles.css`
 
 **Stuck?** Try the hints in `docs/hints/week1/issue-3-card.md` - start with Hint 1!
 
@@ -99,21 +98,21 @@ Create the bookmark card component. Build 4-6 example cards with hardcoded data.
 **Labels:** `week-1`, `html`, `css`, `difficulty:easy`
 
 ### Description
-Create the sidebar with category navigation.
+Create a sidebar with category links.
 
 ### Requirements
 - [ ] "Categories" heading
-- [ ] List of category links
-- [ ] "All Bookmarks" should appear selected/active
-- [ ] Hover states on links
-- [ ] Fixed width (use `--sidebar-width` variable)
+- [ ] List of links: All Bookmarks, Work, Personal, Learning, Entertainment
+- [ ] One link should look "active" (different background color)
 
 ### Acceptance Criteria
-- [ ] Sidebar has fixed width
-- [ ] All categories are listed
-- [ ] "All Bookmarks" looks selected
-- [ ] Hover effect on non-active items
-- [ ] Clean spacing and typography
+- [ ] Sidebar has a fixed width
+- [ ] Links are stacked vertically
+- [ ] Active link looks different from the others
+
+### Where to Work
+- **HTML:** Replace the placeholder in `<aside class="sidebar">` in `index.html`
+- **CSS:** Add styles under "ISSUE #4: SIDEBAR" in `styles.css`
 
 **Stuck?** Try the hints in `docs/hints/week1/issue-4-sidebar.md` - start with Hint 1!
 
@@ -121,65 +120,30 @@ Create the sidebar with category navigation.
 
 ---
 
-## Issue #5: Create the Main Layout
+## Issue #5: Build the Footer
 
-**Labels:** `week-1`, `html`, `css`, `difficulty:medium`
-
-### Description
-Set up the CSS Grid layout for the bookmark cards. This works alongside Issue #3.
-
-### Requirements
-- [ ] Responsive grid that adjusts columns based on screen width
-- [ ] Consistent gap between cards
-- [ ] Cards should be minimum 300px wide
-- [ ] Maximum 3-4 cards per row on large screens
-
-### Additional Tasks
-- [ ] Add proper padding to the main content area
-- [ ] Style the section title heading
-- [ ] Ensure content doesn't get too wide (max-width)
-
-### Acceptance Criteria
-- [ ] Grid adapts from 1 to 3+ columns based on width
-- [ ] Cards don't stretch too wide
-- [ ] Consistent spacing throughout
-- [ ] Section title is styled nicely
-
-**Stuck?** Try the hints in `docs/hints/week1/issue-5-layout.md` - start with Hint 1!
-
-**See it working:** Open `frontend/examples/issue-5-layout/index.html` in your browser - resize the window!
-
----
-
-## Issue #6: Add Responsive Design (BONUS)
-
-**Labels:** `week-1`, `css`, `difficulty:hard`, `bonus`
+**Labels:** `week-1`, `html`, `css`, `difficulty:easy`
 
 ### Description
-Make the bookmark manager work well on tablets and mobile devices.
+Create a simple footer at the bottom of the page.
 
 ### Requirements
-
-#### Tablet (max-width: 768px)
-- [ ] Reduce sidebar width or hide it
-- [ ] Grid shows 1-2 columns
-
-#### Mobile (max-width: 480px)
-- [ ] Hide sidebar completely (we'll add a hamburger menu later)
-- [ ] Full-width header with stacked elements if needed
-- [ ] Single column grid
-- [ ] Form inputs stack vertically
-- [ ] Adjust font sizes and padding
+- [ ] Copyright text or "Built by [Cohort Name]"
+- [ ] Centered text
+- [ ] Different background color from the main content
 
 ### Acceptance Criteria
-- [ ] No horizontal scrolling on mobile
-- [ ] All content is readable on small screens
-- [ ] Touch targets are at least 44px
-- [ ] Layout looks intentional, not broken
+- [ ] Footer spans full width
+- [ ] Text is centered
+- [ ] Footer is visually distinct from the rest of the page
 
-**Stuck?** Try the hints in `docs/hints/week1/issue-6-responsive.md` - start with Hint 1!
+### Where to Work
+- **HTML:** Add a `<footer>` element after the closing `</div>` of `app-container` in `index.html`
+- **CSS:** Add styles under "ISSUE #5: FOOTER" in `styles.css`
 
-**See it working:** Open `frontend/examples/issue-6-responsive/index.html` in your browser - resize to see breakpoints!
+**Stuck?** Try the hints in `docs/hints/week1/issue-5-footer.md` - start with Hint 1!
+
+**See it working:** Open `frontend/examples/issue-5-footer/index.html` in your browser.
 
 ---
 

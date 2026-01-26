@@ -6,37 +6,32 @@ Try each hint level one at a time. Only move to the next if you're truly stuck!
 
 ## Hint 1: Conceptual Direction
 
-The sidebar is a navigation panel with a list of category links. One link should look "active" (selected).
+The sidebar is a vertical list of category links. One link should look "selected."
 
 Think about:
-- What semantic HTML element represents a sidebar/complementary content?
-- What element is used for navigation with a list of links?
-- How do you make links that don't actually go anywhere yet?
-- How do you make one item look different (the active state)?
+- What HTML element is used for navigation?
+- How do you make a list without bullet points?
+- How do you make one link look different (the active one)?
 
 ---
 
 ## Hint 2: Getting Warmer
 
 **HTML structure:**
-- `<aside>` is the semantic element for sidebars
-- `<nav>` contains navigation links
+- `<aside>` is good for sidebars
+- `<nav>` for navigation
 - `<ul>` and `<li>` for the list of links
-- Add a class like `active` to the "All Bookmarks" link
+- Add a class like `active` to the selected link
 
-**Styling approach:**
-- Fixed width using `--sidebar-width` variable
-- Links should be block-level so they fill the width
-- Remove default list styling (bullets, padding)
-
-**States to style:**
-- Default link appearance
-- Hover state (subtle background change)
-- Active state (different background + text color to show it's selected)
+**Styling:**
+- Give the sidebar a fixed width (like `200px` or `250px`)
+- Remove list bullets with `list-style: none`
+- Make links block-level so they fill the width
+- Give the active link a different background color
 
 ---
 
-## Hint 3: Detailed Structure
+## Hint 3: Full Solution
 
 **HTML:**
 ```html
@@ -57,19 +52,16 @@ Think about:
 **CSS:**
 ```css
 .sidebar {
-  width: var(--sidebar-width);
-  background: var(--color-surface);
-  border-right: 1px solid var(--color-border);
-  padding: 24px 0;
+  width: 200px;
+  background-color: #ffffff;
+  padding: 20px 0;
 }
 
 .sidebar h2 {
   padding: 0 16px;
-  margin-bottom: 16px;
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-text-light);
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #666;
 }
 
 .sidebar ul {
@@ -81,18 +73,16 @@ Think about:
 .sidebar a {
   display: block;
   padding: 10px 16px;
-  color: var(--color-text);
+  color: #333;
   text-decoration: none;
-  transition: background 0.2s;
 }
 
 .sidebar a:hover {
-  background: var(--color-bg);
+  background-color: #f5f5f5;
 }
 
 .sidebar a.active {
-  background: var(--color-primary-light);
-  color: var(--color-primary-dark);
-  font-weight: 500;
+  background-color: #e0e7ff;
+  color: #4f46e5;
 }
 ```

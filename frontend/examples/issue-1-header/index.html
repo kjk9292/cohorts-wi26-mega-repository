@@ -5,98 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Issue #1: Header - Example</title>
   <style>
-    /* CSS Variables (provided in starter) */
-    :root {
-      --color-primary: #6366f1;
-      --color-primary-dark: #4f46e5;
-      --color-surface: #ffffff;
-      --color-text: #1e293b;
-      --color-border: #e2e8f0;
-      --radius: 8px;
-      --header-height: 64px;
-    }
-
-    /* Base Reset */
-    *, *::before, *::after {
+    * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background-color: #f8fafc;
-      color: var(--color-text);
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
     }
 
-    button {
-      cursor: pointer;
-      font-family: inherit;
-      border: none;
-    }
-
-    /* =============================================
-       HEADER - Your completed code should look like this
-       ============================================= */
+    /* HEADER - Your completed code should look like this */
     .header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: var(--header-height);
-      padding: 0 24px;
-      background-color: var(--color-surface);
-      border-bottom: 1px solid var(--color-border);
-    }
-
-    .logo {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--color-text);
+      padding: 16px 24px;
+      background-color: #ffffff;
     }
 
     .add-btn {
-      background-color: var(--color-primary);
+      background-color: #6366f1;
       color: white;
       padding: 10px 20px;
-      border-radius: var(--radius);
-      font-weight: 500;
-      font-size: 0.875rem;
-      transition: background-color 0.2s;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
     }
 
-    .add-btn:hover {
-      background-color: var(--color-primary-dark);
-    }
-
-    /* Demo note styling */
+    /* Demo note */
     .demo-note {
-      max-width: 600px;
+      max-width: 500px;
       margin: 40px auto;
       padding: 20px;
       background: #fef3c7;
       border-radius: 8px;
-      font-size: 0.875rem;
+      font-size: 14px;
       line-height: 1.6;
     }
-    .demo-note strong { color: #92400e; }
   </style>
 </head>
 <body>
 
   <!-- HEADER COMPONENT -->
   <header class="header">
-    <h1 class="logo">Bookmark Manager</h1>
+    <h1>Bookmark Manager</h1>
     <button class="add-btn">+ Add Bookmark</button>
   </header>
 
   <div class="demo-note">
     <strong>Issue #1: Header Example</strong><br><br>
-    This is what your completed header should look like. Key features:
+    This is what your completed header should look like:
     <ul style="margin-top: 10px; margin-left: 20px;">
-      <li>Logo on the left, button on the right (flexbox)</li>
-      <li>Fixed height using the CSS variable</li>
-      <li>White background with subtle bottom border</li>
-      <li>Hover over the button to see the darker shade effect</li>
+      <li>App name on the left</li>
+      <li>Button on the right</li>
+      <li>White background</li>
+      <li>Button has a colored background with white text</li>
     </ul>
   </div>
 

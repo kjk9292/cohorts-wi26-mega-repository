@@ -6,38 +6,38 @@ Try each hint level one at a time. Only move to the next if you're truly stuck!
 
 ## Hint 1: Conceptual Direction
 
-You need two elements side-by-side: logo on the left, button on the right.
+You need two things side-by-side: the app name on the left, a button on the right.
 
 Think about:
-- Which CSS layout system is best for placing items on opposite ends of a container?
-- What HTML elements make sense for a logo/title and an action button?
+- What CSS property lets you put things in a row?
+- How do you push items to opposite sides of a container?
 
 ---
 
 ## Hint 2: Getting Warmer
 
-**Layout approach:** Flexbox is your friend here. The key properties you'll need:
-- `display: flex` on the header
-- A property that pushes items to opposite ends (look up "flexbox space between")
-- A property that vertically centers items
+**Layout approach:** Use flexbox!
+- `display: flex` makes children line up in a row
+- `justify-content: space-between` pushes items to opposite ends
 
-**HTML elements to consider:**
-- `<header>` as the container
-- `<h1>` for the logo/app name
-- `<button>` for the add action
+**HTML elements:**
+- `<header>` for the container
+- `<h1>` for the app name
+- `<button>` for the add button
 
-**Styling tips:**
-- Use the CSS variable `--header-height` for consistent height
-- The button should use `--color-primary` for the background
+**Basic styling:**
+- Give the header some padding so content isn't touching the edges
+- Add a background color (white: `#ffffff`)
+- Style the button with a background color and white text
 
 ---
 
-## Hint 3: Detailed Structure
+## Hint 3: Full Solution
 
 **HTML:**
 ```html
 <header class="header">
-  <h1 class="logo">Bookmark Manager</h1>
+  <h1>Bookmark Manager</h1>
   <button class="add-btn">+ Add Bookmark</button>
 </header>
 ```
@@ -48,22 +48,16 @@ Think about:
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: var(--header-height);
-  padding: 0 24px;
-  background: white;
-  border-bottom: 1px solid var(--color-border);
+  padding: 16px 24px;
+  background-color: #ffffff;
 }
 
 .add-btn {
-  background-color: var(--color-primary);
+  background-color: #6366f1;
   color: white;
+  padding: 10px 20px;
   border: none;
-  padding: 8px 16px;
-  border-radius: var(--radius);
+  border-radius: 8px;
   cursor: pointer;
-}
-
-.add-btn:hover {
-  background-color: var(--color-primary-dark);
 }
 ```

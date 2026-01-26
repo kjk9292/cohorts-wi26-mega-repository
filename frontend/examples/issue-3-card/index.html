@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Issue #3: Bookmark Card - Example</title>
+  <style>
+    /* CSS Variables (provided in starter) */
+    :root {
+      --color-primary: #6366f1;
+      --color-primary-dark: #4f46e5;
+      --color-primary-light: #e0e7ff;
+      --color-bg: #f8fafc;
+      --color-surface: #ffffff;
+      --color-text: #1e293b;
+      --color-text-muted: #64748b;
+      --color-border: #e2e8f0;
+      --color-danger: #ef4444;
+      --radius: 8px;
+      --radius-lg: 12px;
+      --radius-sm: 4px;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+    }
+
+    /* Base Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      padding: 40px 24px;
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    button {
+      cursor: pointer;
+      font-family: inherit;
+      border: none;
+    }
+
+    /* =============================================
+       BOOKMARK CARD - Your completed code should look like this
+       ============================================= */
+    .bookmark-card {
+      display: flex;
+      gap: 12px;
+      padding: 16px;
+      background-color: var(--color-surface);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--color-border);
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      max-width: 400px;
+    }
+
+    .bookmark-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .bookmark-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius);
+      background-color: var(--color-primary-light);
+      color: var(--color-primary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .bookmark-icon.icon-red {
+      background-color: #fee2e2;
+      color: #dc2626;
+    }
+
+    .bookmark-icon.icon-blue {
+      background-color: #dbeafe;
+      color: #2563eb;
+    }
+
+    .bookmark-content {
+      flex: 1;
+      min-width: 0; /* Important for text truncation! */
+    }
+
+    .bookmark-title {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .bookmark-title a {
+      color: var(--color-text);
+    }
+
+    .bookmark-title a:hover {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    .bookmark-url {
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+      margin-bottom: 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .bookmark-description {
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+      margin-bottom: 8px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      line-height: 1.4;
+    }
+
+    .bookmark-category {
+      display: inline-block;
+      padding: 2px 8px;
+      font-size: 0.6875rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.025em;
+      border-radius: 9999px;
+      background-color: var(--color-primary-light);
+      color: var(--color-primary-dark);
+    }
+
+    .category-work {
+      background-color: #dbeafe;
+      color: #1d4ed8;
+    }
+
+    .category-learning {
+      background-color: #fef3c7;
+      color: #b45309;
+    }
+
+    .bookmark-delete {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      color: var(--color-text-muted);
+      font-size: 1.25rem;
+      border-radius: var(--radius-sm);
+      opacity: 0;
+      transition: opacity 0.15s, color 0.15s, background-color 0.15s;
+    }
+
+    .bookmark-card:hover .bookmark-delete {
+      opacity: 1;
+    }
+
+    .bookmark-delete:hover {
+      background-color: #fee2e2;
+      color: var(--color-danger);
+    }
+
+    /* Demo layout */
+    .cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    /* Demo note styling */
+    .demo-note {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fef3c7;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+    .demo-note strong { color: #92400e; }
+    .demo-note code { background: #fde68a; padding: 2px 4px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+
+  <div class="cards-container">
+
+    <!-- Card 1: GitHub -->
+    <article class="bookmark-card">
+      <div class="bookmark-icon">
+        <span>G</span>
+      </div>
+      <div class="bookmark-content">
+        <h3 class="bookmark-title">
+          <a href="https://github.com" target="_blank">GitHub</a>
+        </h3>
+        <p class="bookmark-url">https://github.com</p>
+        <p class="bookmark-description">
+          Where the world builds software. Millions of developers and companies build and ship software on GitHub.
+        </p>
+        <span class="bookmark-category category-work">Work</span>
+      </div>
+      <button class="bookmark-delete" aria-label="Delete bookmark">&times;</button>
+    </article>
+
+    <!-- Card 2: MDN with long URL -->
+    <article class="bookmark-card">
+      <div class="bookmark-icon icon-blue">
+        <span>M</span>
+      </div>
+      <div class="bookmark-content">
+        <h3 class="bookmark-title">
+          <a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a>
+        </h3>
+        <p class="bookmark-url">https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow</p>
+        <p class="bookmark-description">
+          Resources for developers, by developers. Documentation for HTML, CSS, JavaScript, and Web APIs.
+        </p>
+        <span class="bookmark-category category-learning">Learning</span>
+      </div>
+      <button class="bookmark-delete" aria-label="Delete bookmark">&times;</button>
+    </article>
+
+    <!-- Card 3: YouTube -->
+    <article class="bookmark-card">
+      <div class="bookmark-icon icon-red">
+        <span>Y</span>
+      </div>
+      <div class="bookmark-content">
+        <h3 class="bookmark-title">
+          <a href="https://youtube.com" target="_blank">YouTube</a>
+        </h3>
+        <p class="bookmark-url">https://youtube.com</p>
+        <p class="bookmark-description">
+          Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube. This description is intentionally long to demonstrate the 2-line clamp.
+        </p>
+        <span class="bookmark-category">Entertainment</span>
+      </div>
+      <button class="bookmark-delete" aria-label="Delete bookmark">&times;</button>
+    </article>
+
+  </div>
+
+  <div class="demo-note">
+    <strong>Issue #3: Bookmark Card Example</strong><br><br>
+    This is what your completed cards should look like. Key features:
+    <ul style="margin-top: 10px; margin-left: 20px;">
+      <li>Hover over a card to see the lift effect and delete button</li>
+      <li>The second card shows URL truncation with <code>text-overflow: ellipsis</code></li>
+      <li>The third card shows description clamped to 2 lines</li>
+      <li>Category badge is styled as a pill</li>
+      <li>Delete button appears on hover, turns red when hovered</li>
+      <li>Icon uses flexbox to center the letter</li>
+    </ul>
+  </div>
+
+</body>
+</html>

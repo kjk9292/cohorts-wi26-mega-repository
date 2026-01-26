@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Issue #4: Sidebar - Example</title>
+  <style>
+    /* CSS Variables (provided in starter) */
+    :root {
+      --color-primary: #6366f1;
+      --color-primary-dark: #4f46e5;
+      --color-primary-light: #e0e7ff;
+      --color-bg: #f8fafc;
+      --color-surface: #ffffff;
+      --color-text: #1e293b;
+      --color-text-muted: #64748b;
+      --color-border: #e2e8f0;
+      --sidebar-width: 240px;
+    }
+
+    /* Base Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.5;
+      display: flex;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* =============================================
+       SIDEBAR - Your completed code should look like this
+       ============================================= */
+    .sidebar {
+      width: var(--sidebar-width);
+      background-color: var(--color-surface);
+      border-right: 1px solid var(--color-border);
+      padding: 24px 0;
+      min-height: 100vh;
+    }
+
+    .sidebar h2 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-muted);
+      padding: 0 20px;
+      margin-bottom: 12px;
+    }
+
+    .sidebar nav ul li a {
+      display: block;
+      padding: 10px 20px;
+      color: var(--color-text);
+      font-size: 0.9375rem;
+      transition: background-color 0.15s;
+    }
+
+    .sidebar nav ul li a:hover {
+      background-color: var(--color-bg);
+    }
+
+    .sidebar nav ul li a.active {
+      background-color: var(--color-primary-light);
+      color: var(--color-primary-dark);
+      font-weight: 500;
+    }
+
+    /* Demo content area */
+    .demo-content {
+      flex: 1;
+      padding: 40px;
+    }
+
+    /* Demo note styling */
+    .demo-note {
+      max-width: 500px;
+      padding: 20px;
+      background: #fef3c7;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+    .demo-note strong { color: #92400e; }
+    .demo-note code { background: #fde68a; padding: 2px 4px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+
+  <!-- SIDEBAR COMPONENT -->
+  <aside class="sidebar">
+    <h2>Categories</h2>
+    <nav>
+      <ul>
+        <li><a href="#" class="active">All Bookmarks</a></li>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">Personal</a></li>
+        <li><a href="#">Learning</a></li>
+        <li><a href="#">Entertainment</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="demo-content">
+    <div class="demo-note">
+      <strong>Issue #4: Sidebar Example</strong><br><br>
+      This is what your completed sidebar should look like. Key features:
+      <ul style="margin-top: 10px; margin-left: 20px;">
+        <li>Fixed width using <code>--sidebar-width</code> variable</li>
+        <li>"All Bookmarks" has the active/selected style</li>
+        <li>Hover over other links to see the hover effect</li>
+        <li>Small caps heading with muted color</li>
+        <li>Links are block-level (fill full width)</li>
+        <li>Uses <code>&lt;aside&gt;</code> for semantic markup</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>

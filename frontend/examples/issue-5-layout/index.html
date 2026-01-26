@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Issue #5: Main Layout / Grid - Example</title>
+  <style>
+    /* CSS Variables (provided in starter) */
+    :root {
+      --color-primary: #6366f1;
+      --color-primary-dark: #4f46e5;
+      --color-primary-light: #e0e7ff;
+      --color-bg: #f8fafc;
+      --color-surface: #ffffff;
+      --color-text: #1e293b;
+      --color-text-muted: #64748b;
+      --color-border: #e2e8f0;
+      --radius: 8px;
+      --radius-lg: 12px;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+      --sidebar-width: 240px;
+      --header-height: 64px;
+    }
+
+    /* Base Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    ul { list-style: none; }
+    button { cursor: pointer; font-family: inherit; border: none; }
+
+    /* Header (simplified for context) */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: var(--header-height);
+      padding: 0 24px;
+      background-color: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .logo { font-size: 1.25rem; font-weight: 700; }
+
+    /* =============================================
+       APP LAYOUT - Your completed code should look like this
+       ============================================= */
+    .app-container {
+      display: flex;
+      min-height: calc(100vh - var(--header-height));
+    }
+
+    /* Sidebar (simplified for context) */
+    .sidebar {
+      width: var(--sidebar-width);
+      background-color: var(--color-surface);
+      border-right: 1px solid var(--color-border);
+      padding: 24px 0;
+      flex-shrink: 0;
+    }
+    .sidebar h2 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      padding: 0 20px;
+      margin-bottom: 12px;
+    }
+    .sidebar a {
+      display: block;
+      padding: 10px 20px;
+      color: var(--color-text);
+    }
+    .sidebar a.active {
+      background-color: var(--color-primary-light);
+      color: var(--color-primary-dark);
+      font-weight: 500;
+    }
+
+    /* =============================================
+       MAIN CONTENT AREA
+       ============================================= */
+    .main-content {
+      flex: 1;
+      padding: 24px;
+      max-width: 1200px;
+      min-width: 0;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--color-text);
+    }
+
+    /* =============================================
+       BOOKMARK GRID - The key part of this issue!
+       ============================================= */
+    .bookmark-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
+
+    /* Placeholder cards for demo */
+    .placeholder-card {
+      padding: 16px;
+      background-color: var(--color-surface);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--color-border);
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+    }
+
+    /* Demo note styling */
+    .demo-note {
+      background: #fef3c7;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+    .demo-note strong { color: #92400e; }
+    .demo-note code { background: #fde68a; padding: 2px 4px; border-radius: 3px; font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Header for context -->
+  <header class="header">
+    <h1 class="logo">Bookmark Manager</h1>
+  </header>
+
+  <div class="app-container">
+
+    <!-- Sidebar for context -->
+    <aside class="sidebar">
+      <h2>Categories</h2>
+      <nav>
+        <ul>
+          <li><a href="#" class="active">All Bookmarks</a></li>
+          <li><a href="#">Work</a></li>
+          <li><a href="#">Personal</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- MAIN CONTENT - Focus of this issue -->
+    <main class="main-content">
+
+      <div class="demo-note">
+        <strong>Issue #5: Layout Example</strong> - Resize your browser to see the grid adapt!<br>
+        Key CSS: <code>grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))</code>
+      </div>
+
+      <h2 class="section-title">All Bookmarks</h2>
+
+      <div class="bookmark-grid">
+        <div class="placeholder-card">Card 1</div>
+        <div class="placeholder-card">Card 2</div>
+        <div class="placeholder-card">Card 3</div>
+        <div class="placeholder-card">Card 4</div>
+        <div class="placeholder-card">Card 5</div>
+        <div class="placeholder-card">Card 6</div>
+        <div class="placeholder-card">Card 7</div>
+        <div class="placeholder-card">Card 8</div>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>

@@ -72,10 +72,27 @@ ul {
    Add your header styles below
    ============================================= */
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f2937;
+  color: white;
   padding: 16px 24px;
-  background-color: #ffffff;
-  /* TODO: Add your styles */
 }
+
+
+.header button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+  /* TODO: Add your styles */
+
+
 
 
 /* =============================================
